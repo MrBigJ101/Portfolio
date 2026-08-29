@@ -27,7 +27,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Language Switch */
 .nav-actions {
   display: flex;
   align-items: center;
