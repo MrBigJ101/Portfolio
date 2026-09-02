@@ -52,8 +52,6 @@ a {
   transition: width .2s ease, height .2s ease;
 }
 
-
-
 .nav {
   width: min(var(--container), calc(100% - 64px));
   margin: auto;
@@ -74,7 +72,7 @@ a {
 
 .nav-links {
   display: flex;
-  gap: 38px;
+  gap: 32px;
 }
 
 .nav-links a {
@@ -99,6 +97,7 @@ a {
   color: var(--accent);
   margin-right: 7px;
 }
+
 .nav-actions {
   display: flex;
   align-items: center;
@@ -122,17 +121,6 @@ a {
   border-color: var(--accent);
 }
 
-@media (max-width: 600px) {
-  .nav-actions {
-    gap: 12px;
-  }
-
-  .language-switch {
-    padding: 8px 10px;
-  }
-}
-
-
 .eyebrow {
   font-family: "Vazirmatn", sans-serif;
   text-transform: uppercase;
@@ -148,9 +136,6 @@ a {
   font-size: 10px;
   color: #555;
 }
-
-
-
 
 .hero {
   width: min(var(--container), calc(100% - 64px));
@@ -262,9 +247,6 @@ a {
   font-size: 22px;
 }
 
-
-
-
 .intro {
   width: min(var(--container), calc(100% - 64px));
   margin: auto;
@@ -285,9 +267,6 @@ a {
 .big-text span {
   color: var(--accent);
 }
-
-
-
 
 .work {
   width: min(var(--container), calc(100% - 64px));
@@ -372,9 +351,6 @@ a {
   font-size: 10px;
 }
 
-
-
-
 .embassy {
   background:
     radial-gradient(circle at 25% 30%, #263300, transparent 30%),
@@ -440,9 +416,6 @@ a {
   color: var(--accent);
   margin-top: 10px;
 }
-
-
-
 
 .project-reverse {
   display: grid;
@@ -532,9 +505,6 @@ a {
   text-align: right;
 }
 
-
-
-
 .irt {
   background: #0b0b0b;
   display: flex;
@@ -565,8 +535,6 @@ a {
   object-fit: contain;
 }
 
-
-
 .more-projects {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -577,8 +545,6 @@ a {
   font-size: 10px;
   color: #666;
 }
-
-
 
 .services {
   width: min(var(--container), calc(100% - 64px));
@@ -630,7 +596,111 @@ a {
   font-size: 25px;
 }
 
+.certificates {
+  width: min(var(--container), calc(100% - 64px));
+  margin: auto;
+  padding: 120px 0 220px;
+}
 
+.certificate-list {
+  border-top: 1px solid var(--line);
+}
+
+.certificate {
+  min-height: 220px;
+  display: grid;
+  grid-template-columns: 100px 1.5fr 1fr 80px;
+  gap: 40px;
+  align-items: center;
+  padding-top: 45px;
+  padding-bottom: 45px;
+  border-bottom: 1px solid var(--line);
+  transition: padding .4s ease, background .4s ease;
+}
+
+.certificate:hover {
+  padding-left: 30px;
+  padding-right: 30px;
+  background: rgba(255,255,255,.015);
+}
+
+.certificate-number {
+  font-family: "DM Mono", monospace;
+  direction: ltr;
+  font-size: 10px;
+  color: #555;
+}
+
+.certificate-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.certificate-type {
+  font-family: "Vazirmatn", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  font-size: 9px;
+  color: #555;
+  margin-bottom: 18px;
+}
+
+.certificate-main h3 {
+  font-size: clamp(38px, 4vw, 65px);
+  line-height: .9;
+  letter-spacing: -.065em;
+}
+
+.certificate-main p {
+  color: #666;
+  font-size: 13px;
+  margin-top: 15px;
+  line-height: 1.5;
+}
+
+.certificate-image {
+  display: block;
+  width: min(260px, 100%);
+  height: auto;
+  margin-top: 32px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  box-shadow: 0 25px 60px rgba(0,0,0,.45);
+  transition: transform .5s ease, border-color .5s ease;
+}
+
+.certificate:hover .certificate-image {
+  transform: scale(1.025);
+  border-color: #444;
+}
+
+.certificate-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #777;
+}
+
+.certificate-status {
+  color: var(--accent);
+}
+
+.certificate-arrow {
+  justify-self: end;
+  color: var(--accent);
+  font-size: 25px;
+}
+
+.certificate-coming .certificate-main h3 {
+  color: #777;
+}
+
+.certificate-coming .certificate-status {
+  color: #666;
+}
 
 .about {
   width: min(var(--container), calc(100% - 64px));
@@ -662,8 +732,6 @@ a {
   line-height: 2.1;
   margin-bottom: 20px;
 }
-
-
 
 .contact {
   width: min(var(--container), calc(100% - 64px));
@@ -705,8 +773,6 @@ a {
   margin-right: 25px;
 }
 
-
-
 footer {
   width: min(var(--container), calc(100% - 64px));
   margin: auto;
@@ -745,7 +811,6 @@ footer {
   color: var(--accent);
 }
 
-
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -759,7 +824,22 @@ footer {
   transform: translateY(0);
 }
 
+.persian-name {
+  font-family: "Vazirmatn", sans-serif !important;
+  font-weight: 900 !important;
+  direction: rtl;
+  text-align: right;
+  letter-spacing: -0.09em !important;
+  line-height: .85 !important;
+  position: relative;
+  z-index: 2;
+}
 
+.persian-name span {
+  display: block;
+  margin-right: 10%;
+  margin-left: 0 !important;
+}
 
 @media (max-width: 900px) {
 
@@ -768,6 +848,7 @@ footer {
   .intro,
   .work,
   .services,
+  .certificates,
   .about,
   .contact,
   footer {
@@ -846,6 +927,23 @@ footer {
     width: 80%;
   }
 
+  .certificates {
+    padding: 100px 0 150px;
+  }
+
+  .certificate {
+    grid-template-columns: 70px 1.4fr 1fr 60px;
+    gap: 25px;
+  }
+
+  .certificate-main h3 {
+    font-size: 42px;
+  }
+
+  .certificate-image {
+    width: min(220px, 100%);
+  }
+
   .about {
     display: block;
   }
@@ -865,13 +963,18 @@ footer {
   }
 }
 
-
-
-
 @media (max-width: 600px) {
 
   .nav {
     height: 80px;
+  }
+
+  .nav-actions {
+    gap: 12px;
+  }
+
+  .language-switch {
+    padding: 8px 10px;
   }
 
   .hero {
@@ -970,6 +1073,50 @@ footer {
     padding-left: 10px;
   }
 
+  .certificates {
+    padding: 80px 0 120px;
+  }
+
+  .certificate {
+    min-height: 180px;
+    grid-template-columns: 35px 1fr 30px;
+    gap: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .certificate-number {
+    align-self: start;
+    padding-top: 5px;
+  }
+
+  .certificate-main h3 {
+    font-size: 32px;
+  }
+
+  .certificate-main p {
+    font-size: 11px;
+  }
+
+  .certificate-image {
+    width: 100%;
+    max-width: 260px;
+    margin-top: 22px;
+  }
+
+  .certificate-meta {
+    display: none;
+  }
+
+  .certificate-arrow {
+    font-size: 20px;
+  }
+
+  .certificate:hover {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
   .contact h2 {
     font-size: 24vw;
   }
@@ -983,20 +1130,4 @@ footer {
     flex-direction: column;
     gap: 10px;
   }
-}
-.persian-name {
-  font-family: "Vazirmatn", sans-serif !important;
-  font-weight: 900 !important;
-  direction: rtl;
-  text-align: right;
-  letter-spacing: -0.09em !important;
-  line-height: .85 !important;
-  position: relative;
-  z-index: 2;
-}
-
-.persian-name span {
-  display: block;
-  margin-right: 10%;
-  margin-left: 0 !important;
 }

@@ -5,16 +5,10 @@ let mouseY = 0;
 let currentX = 0;
 let currentY = 0;
 
-
-/* =========================
-   CUSTOM CURSOR
-========================= */
-
 window.addEventListener("mousemove", event => {
   mouseX = event.clientX;
   mouseY = event.clientY;
 });
-
 
 function animateCursor() {
   currentX += (mouseX - currentX) * 0.15;
@@ -28,11 +22,9 @@ function animateCursor() {
 
 animateCursor();
 
-
 const interactiveElements = document.querySelectorAll(
-  "a, .project, .service"
+  "a, .project, .service, .certificate"
 );
-
 
 interactiveElements.forEach(element => {
 
@@ -48,20 +40,13 @@ interactiveElements.forEach(element => {
 
 });
 
-
-/* =========================
-   REVEAL ANIMATION
-========================= */
-
 const revealElements = document.querySelectorAll(
-  ".project, .service, .about-content, .big-text, .contact h2"
+  ".project, .service, .certificate, .about-content, .big-text, .contact h2"
 );
-
 
 revealElements.forEach(element => {
   element.classList.add("reveal");
 });
-
 
 const observer = new IntersectionObserver(
   entries => {
@@ -80,15 +65,9 @@ const observer = new IntersectionObserver(
   }
 );
 
-
 revealElements.forEach(element => {
   observer.observe(element);
 });
-
-
-/* =========================
-   PROJECT PARALLAX
-========================= */
 
 window.addEventListener("scroll", () => {
 
@@ -112,13 +91,7 @@ window.addEventListener("scroll", () => {
 
 });
 
-
-/* =========================
-   EMAIL MAGNETIC EFFECT
-========================= */
-
 const contactButton = document.querySelector(".email");
-
 
 if (contactButton) {
 
@@ -142,7 +115,6 @@ if (contactButton) {
 
   });
 
-
   contactButton.addEventListener("mouseleave", () => {
 
     contactButton.style.transform =
@@ -152,16 +124,10 @@ if (contactButton) {
 
 }
 
-
-/* =========================
-   CURRENT YEAR
-========================= */
-
 const year = new Date().getFullYear();
 
 const footerYear =
   document.querySelector(".footer-middle span");
-
 
 if (footerYear) {
 
