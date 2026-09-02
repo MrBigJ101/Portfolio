@@ -1,4 +1,3 @@
-
 const cursor = document.querySelector(".cursor");
 
 let mouseX = 0;
@@ -23,7 +22,9 @@ function animateCursor() {
 
 animateCursor();
 
-const interactiveElements = document.querySelectorAll("a, .project, .service");
+const interactiveElements = document.querySelectorAll(
+  "a, .project, .service, .certificate"
+);
 
 interactiveElements.forEach(element => {
   element.addEventListener("mouseenter", () => {
@@ -38,7 +39,7 @@ interactiveElements.forEach(element => {
 });
 
 const revealElements = document.querySelectorAll(
-  ".project, .service, .about-content, .big-text, .contact h2"
+  ".project, .service, .certificate, .about-content, .big-text, .contact h2"
 );
 
 revealElements.forEach(element => {
@@ -65,9 +66,12 @@ revealElements.forEach(element => {
 window.addEventListener("scroll", () => {
   document.querySelectorAll(".project-visual").forEach(visual => {
     const rect = visual.getBoundingClientRect();
+    const progress =
+      (window.innerHeight - rect.top) /
+      (window.innerHeight + rect.height);
 
     if (rect.top < window.innerHeight && rect.bottom > 0) {
-      const offset = (window.innerHeight / 2 - rect.top) * 0.025;
+      const offset = (progress - 0.5) * 20;
       visual.style.transform = `translateY(${offset}px)`;
     }
   });
